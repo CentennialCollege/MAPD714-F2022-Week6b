@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ddW-oH-3NX">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Date Picker-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DatePickerViewController" customModule="MAPD714_F2022_Week6b" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Kxn-pm-yqH">
+                                <rect key="frame" x="36" y="201" width="320" height="216"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="662727600">
+                                    <!--2022-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="946638000">
+                                    <!--2030-12-31 11:00:00 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="en_CA"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceg-Cx-UXw">
+                                <rect key="frame" x="38" y="430" width="72" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Select"/>
+                                <connections>
+                                    <action selector="SelectButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hys-GZ-cab"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kxn-pm-yqH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="PmY-7m-dc5"/>
+                            <constraint firstItem="ceg-Cx-UXw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="X7j-ad-kCY"/>
+                            <constraint firstItem="Kxn-pm-yqH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="142" id="byi-bW-upM"/>
+                            <constraint firstItem="ceg-Cx-UXw" firstAttribute="top" secondItem="Kxn-pm-yqH" secondAttribute="bottom" constant="13" id="ikE-oe-qv0"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Date Picker" image="calendar" catalog="system" id="C3b-Zh-mxf"/>
+                    <connections>
+                        <outlet property="DatePickerControl" destination="Kxn-pm-yqH" id="dvn-pL-ufT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="-448"/>
+        </scene>
+        <!--Multi Picker-->
+        <scene sceneID="NZV-cE-1H7">
+            <objects>
+                <viewController id="aCu-3E-3Ot" customClass="MultiComponentPickerViewController" customModule="MAPD714_F2022_Week6b" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LWE-Pv-51v">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSa-D5-fG4">
+                                <rect key="frame" x="52" y="231" width="328" height="179"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="179" id="rDd-Zr-Uau"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="aCu-3E-3Ot" id="ReK-Ie-nMN"/>
+                                    <outlet property="delegate" destination="aCu-3E-3Ot" id="5oK-hW-fpe"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yff-L6-Wgn">
+                                <rect key="frame" x="52" y="449" width="72" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Select"/>
+                                <connections>
+                                    <action selector="SelectButton_Pressed:" destination="aCu-3E-3Ot" eventType="touchUpInside" id="PDM-ep-WQr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tgX-dR-TgB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pSa-D5-fG4" firstAttribute="leading" secondItem="tgX-dR-TgB" secondAttribute="leading" constant="52" id="2bm-yu-Oiq"/>
+                            <constraint firstItem="pSa-D5-fG4" firstAttribute="top" secondItem="tgX-dR-TgB" secondAttribute="top" constant="172" id="4aW-FB-Xwi"/>
+                            <constraint firstItem="tgX-dR-TgB" firstAttribute="trailing" secondItem="pSa-D5-fG4" secondAttribute="trailing" constant="50" id="QMS-Va-4zo"/>
+                            <constraint firstItem="yff-L6-Wgn" firstAttribute="centerY" secondItem="LWE-Pv-51v" secondAttribute="centerY" id="a8R-e4-sYb"/>
+                            <constraint firstItem="yff-L6-Wgn" firstAttribute="top" secondItem="pSa-D5-fG4" secondAttribute="bottom" constant="39" id="l7B-jx-qS1"/>
+                            <constraint firstItem="pSa-D5-fG4" firstAttribute="leading" secondItem="yff-L6-Wgn" secondAttribute="leading" id="tny-45-kvi"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Multi Picker" image="list.bullet.rectangle.fill" catalog="system" id="Nqx-Fn-Qbl"/>
+                    <connections>
+                        <outlet property="MultiPickerControl" destination="pSa-D5-fG4" id="8vl-Wj-fJm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1cC-wK-mcb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384" y="265"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="kaI-RA-NZb">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ddW-oH-3NX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cRq-iy-lhC">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="4KU-pR-KHa"/>
+                        <segue destination="aCu-3E-3Ot" kind="relationship" relationship="viewControllers" id="9da-kU-GZf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WCf-Qh-QHm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-513.48837209302326" y="-73.390557939914174"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="list.bullet.rectangle.fill" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
